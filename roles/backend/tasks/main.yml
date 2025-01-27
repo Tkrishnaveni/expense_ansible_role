@@ -14,7 +14,7 @@
   ansible.builtin.user:
      name: expense
 - name: import task from commonrole
-  import_role:
+  ansible.builtin.include_role:
     name: common
     tasks_from: main
 
