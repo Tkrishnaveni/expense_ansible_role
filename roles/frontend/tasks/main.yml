@@ -29,6 +29,10 @@
   #    src: /tmp/frontend.zip
   #    dest: /usr/share/nginx/html
   #    remote_src: yes
+  - name: import task from commonrole
+    include_role:
+     name: common
+     tasks_from: main
 
   - name: copy expense conf file
     ansible.builtin.template:
