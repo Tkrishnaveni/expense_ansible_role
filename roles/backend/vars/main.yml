@@ -1,3 +1,5 @@
 mysql_user: root
 mysql_password: ExpenseApp@1
 mysql_host: mysql.kittudevops.shop 
+app_loc: /app
+component: backend
