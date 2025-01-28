@@ -1,17 +1,17 @@
 - name: delete app directory
-  tag:
+  tags:
   - deployment
   ansible.builtin.file:
      name: "{{app_loc}}"
      state: absent
 - name: create app directory
-  tag:
+  tags:
   - deployment
   ansible.builtin.file:
      name: "{{app_loc}}"
      state: directory
 - name: downloade ans unzip application code
-  tag:
+  tags:
   - deployment
   ansible.builtin.unarchive:
      src: https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{component}}-v2.zip
