@@ -2,20 +2,20 @@
   tags: 
   - deployment
   ansible.builtin.file:
-    path: "{{ APP_LOCAION }}" # backend folder is /app, frontend /usr/share/nginx/html
+    path: "{{ app_loc }}" # backend folder is /app, frontend /usr/share/nginx/html
     state: absent
 
 - name: create app directory
   tags: 
   - deployment
   ansible.builtin.file:
-    path: "{{ APP_LOCAION }}" # backend folder is /app, frontend /usr/share/nginx/html
+    path: "{{ app_loc }}" # backend folder is /app, frontend /usr/share/nginx/html
     state: directory
 
 - name: download app code
   tags: 
   - deployment
   ansible.builtin.unarchive:
-    src: "https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{ COMPONENT }}-v2.zip"
-    dest: "{{ APP_LOCAION }}"
+    src: "https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{ component }}-v2.zip"
+    dest: "{{ app_loc }}"
     remote_src: yes
