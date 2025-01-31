@@ -4,7 +4,9 @@
          executable: pip3.9
    loop:
          - cryptography
-         - PyMySQL     
+         - PyMySQL   
+         - boto3
+         - botocore  
          
  - name: install mysql
    ansible.builtin.package:
